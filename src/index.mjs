@@ -71,5 +71,15 @@ val5.push("monkey");
 console.log(val5);
 
 /**
- *
+ *　テンプレート文字列
  */
+const name = "me";
+const age = 55;
+
+//　従来の方法 +で結合
+const messeage1 = "messeage1 私の名前は" + name + "です。" + "年齢は" + age + "です。";
+console.log(messeage1);
+
+// テンプレート文字列　``内で変数を${}
+const messeage2 = `messeage2 私の名前は${name}です。年齢は${age}です。`;
+console.log(messeage2);
