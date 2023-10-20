@@ -71,15 +71,77 @@ val5.push("monkey");
 console.log(val5);
 
 /**
- *　テンプレート文字列
+ * テンプレート文字列
  */
 const name = "me";
 const age = 55;
 
 //　従来の方法 +で結合
-const messeage1 = "messeage1 私の名前は" + name + "です。" + "年齢は" + age + "です。";
+const messeage1 =
+  "messeage1 私の名前は" + name + "です。" + "年齢は" + age + "歳です。";
 console.log(messeage1);
 
 // テンプレート文字列　``内で変数を${}
-const messeage2 = `messeage2 私の名前は${name}です。年齢は${age}です。`;
+const messeage2 = `messeage2 私の名前は${name}です。年齢は${age}歳です。`;
 console.log(messeage2);
+
+/**
+ * アロー関数
+ */
+// 従来の書き方
+function func1(str) {
+  return str;
+}
+console.log(func1("func1の引数です。"));
+
+// const変数にファンクションを定義
+const func2 = function (str) {
+  return str;
+};
+console.log(func2("func2の引数です。"));
+
+// アロー関数
+// functionはいらない
+// =>が矢印にみえるためアロー関数
+// 引数の()無しで記載可（自動で補完される）
+const func3 = (str) => {
+  return str;
+};
+console.log(func3("func3の引数です。"));
+
+// 処理内容が単一式の場合、１行で記載できる
+const func4 = (str) => str;
+console.log(func4("func4の引数です。"));
+
+// 二つの引数
+const func5 = (num1, num2) => num1 + num2;
+console.log(func5(10, 20));
+
+/**
+ * 分割代入
+ */
+// オブジェクトの場合
+const myProfile = {
+  myname: "me",
+  myage: 55,
+};
+// 通常の書き方
+const message3 = `messege3 私の名前は${myProfile.myname}です。年齢は${myProfile.myage}歳です。`;
+console.log(message3);
+
+// オブジェクトの分割代入（オブジェクトからプロパティを抜き出す）
+const { myname, myage } = myProfile;
+const message4 = `message4 私の名前は${myname}です。年齢は${myage}歳です。`;
+console.log(message4);
+
+// 配列の場合
+const myProfile1 = ["me", 55];
+
+// 通常の書き方
+const message5 = `messege5 私の名前は${myProfile1[0]}です。年齢は${myProfile1[1]}歳です。`;
+console.log(message5);
+
+// 配列の分割代入（配列の順番に抜き出す）
+const [myname1, myage1] = myProfile1;
+const message6 = `messege6 私の名前は${myname1}です。年齢は${myage1}歳です。`;
+console.log(message6);
