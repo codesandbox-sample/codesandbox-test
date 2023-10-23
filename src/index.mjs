@@ -153,3 +153,10 @@ const sayHello = (name = "me") => console.log(`こんにちは。${name}さん�
 sayHello();
 sayHello("you");
 
+/**
+ * スプレッド構文
+ */
+
+// 配列の展開
+const arr1 = [1, 2];
+console.log(arr1);
