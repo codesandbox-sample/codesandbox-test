@@ -251,9 +251,38 @@ console.log(newNameArr);
 const val11 = 1 < 0 ? "trueです" : "falseです";
 console.log(val11);
 
-const num = 1300;
+const num = "1,300";
 console.log(num.toLocaleString());
 
 const formattedNum =
   typeof num === "number" ? num.toLocaleString() : "数値ではありません";
 console.log(formattedNum);
+
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? "100を超えています" : "許容範囲内";
+};
+console.log(checkSum(40, 70));
+
+/**
+ * 論理演算しの本当の意味　&& ||
+ */
+const flag1 = true;
+const flag2 = false;
+
+if (flag1 || flag2) {
+  console.log(`|| ${flag1}か${flag2}はtrueです`);
+}
+
+if (flag1 && flag2) {
+  console.log(`&& ${flag1}も${flag2}もtrueです`);
+}
+
+// || は左側がfalseなら右側を返す
+const num11 = null;
+const fee = num11 || "金額未設定です";
+console.log(fee);
+
+// && は左側がtrueなら右側を返す
+const num22 = 100;
+const fee2 = num22 && "何か設定されました";
+console.log(fee2);
