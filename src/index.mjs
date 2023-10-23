@@ -198,3 +198,62 @@ console.log(arr9);
 arr9[0] = 300;
 console.log(arr9);
 console.log(arr5);
+
+/**
+ * mapを使った配列の処理
+ */
+const nameArr = ["田中", "山田", "佐藤"];
+
+// forを使った書き方
+for (let index = 0; index < nameArr.length; index++) {
+  console.log(nameArr[index]);
+}
+
+// mapを使った書き方
+const nameArr2 = nameArr.map((name) => {
+  return name;
+});
+console.log(nameArr2);
+
+// mapを使った書き方
+nameArr.map((name) => console.log(name));
+
+/**
+ * filterを使った配列の処理
+ */
+const numArr = [1, 2, 3, 4, 5];
+const newNumArr = numArr.filter((num) => {
+  return num % 2 === 1;
+});
+console.log(newNumArr);
+
+// forを使った書き方
+for (let index = 0; index < nameArr.length; index++) {
+  console.log(`${index + 1}番目は${nameArr[index]}です`);
+}
+
+// mapを使った書き方
+nameArr.map((name, index) => console.log(`${index + 1}番目は、${name}です`));
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "佐藤") {
+    return name;
+  } else {
+    return `${name}くん`;
+  }
+});
+console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+// 条件　？　条件がtrueの時　：　条件がfalseの時
+const val11 = 1 < 0 ? "trueです" : "falseです";
+console.log(val11);
+
+const num = 1300;
+console.log(num.toLocaleString());
+
+const formattedNum =
+  typeof num === "number" ? num.toLocaleString() : "数値ではありません";
+console.log(formattedNum);
