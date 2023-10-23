@@ -174,13 +174,27 @@ console.log(num1);
 console.log(num2);
 console.log(...arr3);
 
-// 配列のコピー、結合
-const arr4 = [10,20];
-const arr5 = [30,40];
+// 配列のコピー
+const arr4 = [10, 20];
+const arr5 = [30, 40];
 
 const arr6 = [...arr4];
 console.log(arr6);
 
-const arr7 = [...arr4,...arr5];
-console.logI(arr7);
+// 配列の結合
+const arr7 = [...arr4, ...arr5];
+console.log(arr7);
 
+//配列を代入し、値を変更すると参照先もかわってしまう
+const arr8 = arr4;
+console.log(arr8);
+arr8[0] = 100;
+console.log(arr8);
+console.log(arr4);
+
+// スプレッド構文だと変わらない（値渡し）
+const arr9 = [...arr5];
+console.log(arr9);
+arr9[0] = 300;
+console.log(arr9);
+console.log(arr5);
